@@ -1,4 +1,5 @@
 ESX = nil
+
 local Retrait = "" -- WEBHOOK POUR LE RETRAIT DARGENT
 local Important = "" -- WEBHOOK POUR LES DEPOT/RETRAIT IMPORTANT (+1M)
 local Depot = "" -- WEBHOOK POUR LES DEPOTS
