@@ -60,14 +60,14 @@ function MenuBanque()
 
                     RageUI.ButtonWithStyle("Déposer 10K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('jjk', 10000)
+                            TriggerServerEvent('depot', 10000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Déposer 50K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('jjk', 50000)
+                            TriggerServerEvent('depot', 50000)
                             Config.GetPlayerMoney()
                         end
                     end)
@@ -95,21 +95,21 @@ function MenuBanque()
 
                     RageUI.ButtonWithStyle("Retirer 10K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 10000)
+                            TriggerServerEvent('retrait', 10000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Retirer 50K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 50000)
+                            TriggerServerEvent('retrait', 50000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Retirer 200K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 200000)
+                            TriggerServerEvent('retrait', 200000)
                             Config.GetPlayerMoney()
                         end
                         end)
@@ -157,21 +157,21 @@ function MenuATM()
 
                     RageUI.ButtonWithStyle("Déposer 10K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('jjk', 10000)
+                            TriggerServerEvent('depot', 10000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Déposer 50K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('jjk', 50000)
+                            TriggerServerEvent('depot', 50000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Déposer 200K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('jjk', 200000)
+                            TriggerServerEvent('depot', 200000)
                             Config.GetPlayerMoney()
                         end
                         end)
@@ -192,21 +192,21 @@ function MenuATM()
 
                     RageUI.ButtonWithStyle("Retirer 10K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 10000)
+                            TriggerServerEvent('retrait', 10000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Retirer 50K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 50000)
+                            TriggerServerEvent('retrait', 50000)
                             Config.GetPlayerMoney()
                         end
                     end)
 
                     RageUI.ButtonWithStyle("Retirer 200K Dollars", nil, {RightLabel = "→→→"},true, function(Hovered, Active, Selected)
                         if (Selected) then   
-                            TriggerServerEvent('kkk', 200000)
+                            TriggerServerEvent('retrait', 200000)
                             Config.GetPlayerMoney()
                         end
                         end)
@@ -227,7 +227,7 @@ function saisieretrait()
         amount = tonumber(amount)
 
         if type(amount) == 'number' then
-            TriggerServerEvent('kkk', amount)
+            TriggerServerEvent('retrait', amount)
         else
             ESX.ShowAdvancedNotification("Le banquier", "", ('Tu viens pour ~r~rien~s~ retirer ~r~?!~s~'), 'CHAR_ANDREAS', 7)
         end
@@ -241,7 +241,7 @@ function saisiedepot()
         amount = tonumber(amount)
 
         if type(amount) == 'number' then
-            TriggerServerEvent('jjk', amount)
+            TriggerServerEvent('depot', amount)
         else
             ESX.ShowAdvancedNotification("Le banquier", "", ('Comment ca tu viens tu veux rien déposer ~r~?!~s~ J\'vai t\'en mettre ~r~une~s~ si tu continues ~r~!'), 'CHAR_ANDREAS', 7)
         end
