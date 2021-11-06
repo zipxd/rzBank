@@ -2,7 +2,11 @@
 
 https://github.com/RayanWaize/rBank-Maj rework
 
-add de logs adaptage base calif etc bref
+- Add de logs dépot/retrait et dépot/retrait important (+1M) (Montant configurable dans la config)
+- Adaptage base california 
+- Et d'autres petits changements cool je vous laisse regarder par vous meme 
+
+webhook logs -> coté serveur 
 
 rework by me 
 
