@@ -59,11 +59,11 @@ AddEventHandler("retrait", function(money)
 	end
 end)
 
-RegisterServerEvent("bank:solde") 
-AddEventHandler("bank:solde", function(action, amount)
+RegisterServerEvent("solde") 
+AddEventHandler("solde", function(action, amount)
     local xPlayer = ESX.GetPlayerFromId(source)
     local playerMoney = xPlayer.getAccount('bank').money
-    TriggerClientEvent("solde:argent", source, playerMoney)
+    TriggerClientEvent("argent", source, playerMoney)
 end)
 
 date_local1 = os.date('%H:%M:%S', os.time())
