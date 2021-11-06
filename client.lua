@@ -7,8 +7,8 @@ Citizen.CreateThread(function()
 	end
 end)
 local PlayerMoney = 0
-RegisterNetEvent("solde:argent")
-AddEventHandler("solde:argent", function(money, cash)
+RegisterNetEvent("argent")
+AddEventHandler("argent", function(money, cash)
     PlayerMoney = tonumber(money)
 end)
 Citizen.CreateThread(function()
