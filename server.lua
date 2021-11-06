@@ -1,4 +1,7 @@
 ESX = nil
+local Retrait = "" -- WEBHOOK POUR LE RETRAIT DARGENT
+local Important = "" -- WEBHOOK POUR LES DEPOT/RETRAIT IMPORTANT (+1M)
+local Depot = "" -- WEBHOOK POUR LES DEPOTS
 
 TriggerEvent('::{korioz#0110}::esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -63,54 +66,30 @@ AddEventHandler("bank:solde", function(action, amount)
     TriggerClientEvent("solde:argent", source, playerMoney)
 end)
 
+date_local1 = os.date('%H:%M:%S', os.time())
+local date_local = date_local1
+local embeds = {
+	{
+		["title"]=message,
+		["type"]="rich",
+		["color"] ="64063",
+		["footer"]=  {
+			["text"]= "Heure: " ..date_local.. "",
+		},
+	}
+}
+
 function Depot (name,message,color)
-	local DiscordWebHook = "https://discord.com/api/webhooks/877197703581417503/pxxw7ye3-G_D1iGZDXU4M4937fYWcKGbt1_-YZm7cPleQ7AT5CWuxlTbytg74lpgwjjD" -- WEBHOOK POUR LES DEPOTS
-	date_local1 = os.date('%H:%M:%S', os.time())
-	local date_local = date_local1
-	local embeds = {
-		{
-			["title"]=message,
-			["type"]="rich",
-			["color"] ="64063",
-			["footer"]=  {
-				["text"]= "Heure: " ..date_local.. "",
-			},
-		}
-	}
 	if message == nil or message == '' then return FALSE end
-	PerformHttpRequest(DiscordWebHook, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' })
+	PerformHttpRequest(Depot, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' })
 end 
+
 function Important (name,message,color)
-	local DiscordWebHook = "https://discord.com/api/webhooks/877199668113702982/dg6x2OdygTD_lA5CxnGaRE20uTZZDbFM4u9QELL6KwHwRXgLqgouSwbdS5kbuogQgQj3" -- WEBHOOK POUR LES DEPOT/RETRAIT IMPORTANT (+1M)
-	date_local1 = os.date('%H:%M:%S', os.time())
-	local date_local = date_local1
-	local embeds = {
-		{
-			["title"]=message,
-			["type"]="rich",
-			["color"] ="15206196",
-			["footer"]=  {
-				["text"]= "Heure: " ..date_local.. "",
-			},
-		}
-	}
 	if message == nil or message == '' then return FALSE end
-	PerformHttpRequest(DiscordWebHook, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' }) 
+	PerformHttpRequest(Important, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' }) 
 end 
+
 function RetireLogs (name,message,color)
-	local DiscordWebHook = "https://discord.com/api/webhooks/877197703581417503/pxxw7ye3-G_D1iGZDXU4M4937fYWcKGbt1_-YZm7cPleQ7AT5CWuxlTbytg74lpgwjjD" -- WEBHOOK POUR LE RETIRAGE DARGENT
-	date_local1 = os.date('%H:%M:%S', os.time())
-	local date_local = date_local1
-	local embeds = {
-		{
-			["title"]=message,
-			["type"]="rich",
-			["color"] ="7674",
-			["footer"]=  {
-				["text"]= "Heure: " ..date_local.. "",
-			},
-		}
-	}
 	if message == nil or message == '' then return FALSE end
-	PerformHttpRequest(DiscordWebHook, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' })
+	PerformHttpRequest(Retrait, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' })
 end 
