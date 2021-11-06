@@ -10,7 +10,7 @@ Config.Color        = {r = 31, g = 255, b = 0}
 Config.Type         = 22
 
 Config.GetPlayerMoney = function(action)
-    TriggerServerEvent("bank:solde", action)
+    TriggerServerEvent("solde", action)
 end
 
 
