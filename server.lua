@@ -49,7 +49,7 @@ AddEventHandler("retrait", function(money)
 			xPlayer.addAccountMoney('cash', total)
 			TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Banque', 'Banque', "Vous avez retiré ~g~"..total.."$~s~ de la banque !", 'CHAR_BANK_FLEECA', 10)
 			if total >= Config.MoneyImportante then
-				Important('Retir important', '__Retrait supérieur à 1M__\n' .. GetPlayerName(source) .. ' [' .. source .. '] a retiré '..total..' Dollars\nInfo Joueur : Cash : '..xMoney..' | Banque :'..xMoneyBank)
+				Important('Retrait important', '__Retrait supérieur à 1M__\n' .. GetPlayerName(source) .. ' [' .. source .. '] a retiré '..total..' Dollars\nInfo Joueur : Cash : '..xMoney..' | Banque : '..xMoneyBank)
 				TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Le Banquier un peu vendu', '', "Dis donc.. T'as beaucoup d'~g~argent~s~ toi... on peut s\'~b~arranger~s~ si tu veux...", 'CHAR_ANDREAS', 10)
 			else
 				RetireLogs('LogsBanque', '__Argent retiré__\n' .. GetPlayerName(source) .. ' [' .. source .. '] a retiré '..total..' Dollars\nInfo Joueur : Cash : '..xMoney..' | Banque :'..xMoneyBank)
