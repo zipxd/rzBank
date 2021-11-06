@@ -20,7 +20,7 @@ AddEventHandler("jjk", function(money)
 			xPlayer.removeAccountMoney('cash', total)
 			xPlayer.addAccountMoney('bank', total)
         	TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Banque', 'Banque', "Vous avez deposé ~g~"..total.."$~s~ à la banque !", 'CHAR_BANK_FLEECA', 10)
-			if total >= 1000000 then
+			if total >= Config.MoneyImportante then
 				Important('Dépot important', '__Dépot supérieur à 1M__\n' .. GetPlayerName(source) .. ' [' .. source .. '] a déposé '..total..' Dollars\nInfo Joueur : Cash : '..xMoney..' | Banque :'..xMoneyBank)
 				TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Le Banquier un peu vendu', '', "Dis donc.. T'as beaucoup d'~g~argent~s~ toi... on peut s\'~b~arranger~s~ si tu veux...", 'CHAR_ANDREAS', 10)
 			else
@@ -47,7 +47,7 @@ AddEventHandler("kkk", function(money)
 			xPlayer.removeAccountMoney('bank', total)
 			xPlayer.addAccountMoney('cash', total)
 			TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Banque', 'Banque', "Vous avez retiré ~g~"..total.."$~s~ de la banque !", 'CHAR_BANK_FLEECA', 10)
-			if total >= 1000000 then
+			if total >= Config.MoneyImportante then
 				Important('Retir important', '__Retir supérieur à 1M__\n' .. GetPlayerName(source) .. ' [' .. source .. '] a retiré '..total..' Dollars\nInfo Joueur : Cash : '..xMoney..' | Banque :'..xMoneyBank)
 				TriggerClientEvent('::{korioz#0110}::esx:showAdvancedNotification', source, 'Le Banquier un peu vendu', '', "Dis donc.. T'as beaucoup d'~g~argent~s~ toi... on peut s\'~b~arranger~s~ si tu veux...", 'CHAR_ANDREAS', 10)
 			else
