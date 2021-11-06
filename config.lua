@@ -1,5 +1,6 @@
 Config = {}
 
+Config.MoneyImportante = 1000000 -- Changez selon l'économie de votre serveur
 Config.BlipsBank = true 
 Config.BlipsATM = true  
 
